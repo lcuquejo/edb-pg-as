@@ -1,2 +1,22 @@
 This is the Git repo of the Docker Image for EDB Postgres Advanced Server. Just an idea for now :)
 
+How to use:
+
+First you need a login and password from https://www.enterprisedb.com/user/register
+
+Example usage:
+
+
+```
+docker run -p 5444:5444 --name edb-pg-as \
+  -e EDB_LOGIN=your_cool_login -e EDB_PASSWORD=your_super_password \
+  leonardocuquejo/edb-pg-as:latest
+```
+
+With persistent data (/var/lib/edb-as LOCAL):
+```
+docker run -p 5444:5444 --name edb-pg-as \
+  -v /var/lib/edb-as:/var/lib/edb-as \
+  -e EDB_LOGIN=your_cool_login -e EDB_PASSWORD=your_super_password \
+  leonardocuquejo/edb-pg-as:latest
+```

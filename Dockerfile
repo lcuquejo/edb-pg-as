@@ -22,8 +22,8 @@ RUN set -eux; \
 
 VOLUME ["/var/lib/edb-as/13/main", "/etc/edb-as/13/main"]
 
-COPY entrypoint.sh /tmp/entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 
 EXPOSE 5444
 
-ENTRYPOINT ["sh", "/tmp/entrypoint.sh"]
+ENTRYPOINT ["sh", "/entrypoint.sh"]

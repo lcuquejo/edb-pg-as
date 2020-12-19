@@ -13,6 +13,9 @@ install_edb () {
 
     # Quick Fix (Need to improve)
     mkdir -p /var/run/edb-as/13-main.epas_stat_tmp && chown -R enterprisedb:enterprisedb  /var/run/edb-as
+
+    # Quick fix 2 - Not secure
+    echo "host all all all md5" >> /etc/edb-as/13/main/pg_hba.conf
   fi
 }
 
